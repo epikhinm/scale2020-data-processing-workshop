@@ -42,7 +42,7 @@ def produce():
         'sasl.mechanism': 'SCRAM-SHA-512',
         'sasl.password': os.environ['KAFKA_PASS'],
         'sasl.username': os.environ['KAFKA_USER'],
-        'ssl.ca.location': '/usr/share/ca-certificates/mozilla/YandexCA.crt',
+        'ssl.ca.location': 'CA.pem',
     })
 
     count = 0
@@ -58,7 +58,10 @@ def main():
     """Event-Loop"""
     while True:
         start = time.time()
-        produce()
+        try:
+            produce()
+        except Exception as exc:
+            logging.warn('Failed to produce events', exc)
         end = time.time()
         time_diff = (end - start)
         sleep_time = int(60.0 - time_diff)
