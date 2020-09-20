@@ -4,6 +4,7 @@ BRANCH ?= $(shell git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/\* //' | tr 
 
 venv:
 	python3.8 -m venv venv
+	./venv/bin/pip install --upgrade pip wheel setuptools
 	./venv/bin/pip --no-cache-dir install -r requirements.txt
 
 .PHONY: clean
