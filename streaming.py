@@ -13,7 +13,7 @@ PASSWORD = "password"
 JAAS_CONFIG = f"org.apache.kafka.common.security.scram.ScramLoginModule " \
               f"required username=\"{USER}\" password=\"{PASSWORD}\";"
 
-# Defince schema for raw data
+# Define schema for raw data
 schema = StructType() \
     .add("id", LongType(), False) \
     .add("timestamp", TimestampType(), False) \
