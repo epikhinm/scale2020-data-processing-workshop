@@ -106,7 +106,7 @@
 
 #### 11. Импортирование потока событий
 1. Откройте терминал и зайдите на виртуальную машину по ssh.
-2. Выполните команду `sudo apt update && sudo apt install git make screen python3-dev python-venv`, которая установит команды, необходимые для запуска скрипта.
+2. Выполните команду `sudo apt update && sudo apt install git make screen python3-dev python3-venv -y`, которая установит команды, необходимые для запуска скрипта.
 3. Выполните `git clone git@github.com:epikhinm/scale2020-data-processing-workshop.git; cd scale2020-data-processing-workshop`
 4. Установите зависимости с помощью команды `make venv`.
 5. Запустите `screen` и в нем выполните `. venv/bin/activate`, для того чтобы начать использовать python и зависимости из собранного venv.
