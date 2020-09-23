@@ -6,7 +6,7 @@ CA.pem:
 	wget "https://storage.yandexcloud.net/cloud-certs/CA.pem"
 
 venv: CA.pem
-	python3.8 -m venv venv
+	python3 -m venv venv
 	./venv/bin/pip install --upgrade pip wheel setuptools
 	./venv/bin/pip --no-cache-dir install -r requirements.txt
 
