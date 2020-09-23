@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO,
        stop_max_attempt_number=4)
 def get_last_samples():
     """Get sensors data for last 5 minutes"""
-    r = requests.get('https://data.sensor.community/static/v1/data.json',
+    r = requests.get('https://scale2020.storage.yandexcloud.net/latest.json',
                      timeout=15)
     r.raise_for_status()
     return r.json()
